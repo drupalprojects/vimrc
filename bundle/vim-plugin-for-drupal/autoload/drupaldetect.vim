@@ -122,19 +122,18 @@ function drupaldetect#InfoPath(path, ...) " {{{
   let dir = a:path
   let tail = strridx(dir, s:slash)
   while tail != -1
-    let infopath = glob(dir . s:slash . '*.{info,info.yml,make,build}')
-    if strlen(infopath)
-      " If there is more than one, they are separated by newlines.
-      let files = split(infopath, '\n')
-      for file in files
-        if file =~ '\.info$' || file =~ '\.info.yml$'
-          let s:info_path_cache[a:path] = file
-          return file
-        endif
-      endfor
-      let s:info_path_cache[a:path] = files[0]
-      return files[0]
-    endif
+    " Unfortunately, some systems do not support
+    " glob(path.{info,info.yml,make,build})
+    " Look for an info file in the directory tail,
+    " then a drush make or profile builder info file.
+    for ext in ['info', 'info.yml', 'make', 'build']
+      let infopath = glob(dir . s:slash . '*.' . ext)
+      if strlen(infopath)
+        let files = split(infopath, '\n')
+        let s:info_path_cache[a:path] = files[0]
+        return files[0]
+      endif
+    endfor
     " No luck yet, so go up one directory.
     let dir = strpart(dir, 0, tail)
     let tail = strridx(dir, s:slash)
