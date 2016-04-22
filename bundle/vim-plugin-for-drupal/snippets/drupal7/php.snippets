@@ -433,7 +433,7 @@ snippet fapi_checkboxes
 		'#description' => t('${3:Short description}'),
 		'#options' => array(
 			'${4:return_value} => t('${4:Label}'),
-		)
+		),
 		//'#default_value' => 'option_key', // A key from #options
 		//'#tree' => TRUE,
 	);
@@ -483,7 +483,7 @@ snippet fapi_fieldset
 snippet fapi_file
 	$form[${1:name}] = array(
 		'#type' => 'file',
-		'#title' => t('${2:title}')
+		'#title' => t('${2:title}'),
 		'#description' => t('${3:short description}'),
 		'#size' => ${4:60},
 	);
@@ -518,7 +518,7 @@ snippet fapi_imagebutton
 snippet fapi_item
 	$form[${1:name}] = array(
 		'#type' => 'item',
-		'#title' => t('${2:title}')
+		'#title' => t('${2:title}'),
 		'#markup' => ${3:'html'},
 	);
 	${4}
@@ -527,7 +527,7 @@ snippet fapi_item
 snippet fapi_machine_name
 	$form[${1:name}] = array(
 		'#type' => 'machine_name',
-		'#title' => t('${2:title}')
+		'#title' => t('${2:title}'),
 		'#description' => t('${3:short description}'),
 		'#default_value' => ${4:'some_machine_name'},
 		'#machine_name' = array(
@@ -544,7 +544,7 @@ snippet fapi_machine_name
 snippet fapi_managed_file
 	$form[${1:name}] = array(
 		'#type' => 'managed_file',
-		'#title' => t('${2:title}')
+		'#title' => t('${2:title}'),
 		'#description' => t('${3:short description}'),
 		'#upload_location' => 'public://files',
 		//'#upload_validators' => array('callbacks'),
@@ -565,7 +565,7 @@ snippet fapi_markup
 snippet fapi_password
 	$form[${1:name}] = array(
 		'#type' => 'password',
-		'#title' => t('${2:title}')
+		'#title' => t('${2:title}'),
 		'#description' => t('${3:short description}'),
 		'#size' => ${4:15},
 		'#maxlength' => ${5:64},
@@ -576,7 +576,7 @@ snippet fapi_password
 snippet fapi_password_confirm
 	$form[${1:name}] = array(
 		'#type' => 'password_confirm',
-		'#title' => t('${2:title}')
+		'#title' => t('${2:title}'),
 		'#description' => t('${3:short description}'),
 		'#size' => ${4:15},
 	);
@@ -585,7 +585,7 @@ snippet fapi_password_confirm
 snippet fapi_radio
 	$form[${1:name}] = array(
 		'#type' => 'radio',
-		'#title' => t('${2:title}')
+		'#title' => t('${2:title}'),
 		'#description' => t('${3:short description}'),
 		'#default_value' => ${4:'some_default_value'},
 	);
@@ -595,11 +595,11 @@ snippet fapi_radio
 snippet fapi_radios
 	$form[${1:name}] = array(
 		'#type' => 'radios',
-		'#title' => t('${2:title}')
+		'#title' => t('${2:title}'),
 		'#description' => t('${3:short description}'),
 		'#options' => array(
 			'${4:return_value}' => t('${5:Display value}'),
-		)
+		),
 		'#default_value' => ${6:'some_option_name'},
 	);
 	${7}
@@ -638,7 +638,7 @@ snippet fapi_tableselect
 snippet fapi_text_format
 	$form[${1:name}] = array(
 		'#type' => 'text_format',
-		'#title' => t('${2:title}')
+		'#title' => t('${2:title}'),
 		'#description' => t('${3:short description}'),
 		'#format' => ${4:'format_name'}, //Default format is NULL.${5}
 		//'#base_type' => 'textarea', //'text',
@@ -649,7 +649,7 @@ snippet fapi_text_format
 snippet fapi_textarea
 	$form[${1:name}] = array(
 		'#type' => 'textarea',
-		'#title' => t('${2:title}')
+		'#title' => t('${2:title}'),
 		'#description' => t('${3:short description}'),
 		'#rows' => ${4:5},
 		'#cols' => ${5:60},${6}
@@ -1421,7 +1421,7 @@ snippet h_schema
 	      '${9}' => array('${10}'),
 			),
 	    'unique keys' => array(
-	      '${11}' => array('${12}')
+	      '${11}' => array('${12}'),
 			),
 	    'foreign keys' => array(
 	      '${13}' => array(
@@ -2098,7 +2098,7 @@ snippet h_node_info
 	      'name' => t('${2}'),
 	      'base' => '${3}',
 	      'description' => t('${4}'),
-	    )
+	    ),
 	  );
 	}
 snippet h_ranking
@@ -2737,7 +2737,7 @@ snippet h_field_extra_fields
 	        'description' => t('${9}'),
 	        'weight' => ${10},
 	      ),
-	    )
+	    ),
 	  );
 	
 	  return $extra;
@@ -4290,7 +4290,7 @@ snippet hook_menu_link_alter
 	   *  $item['hidden'] = 1;
 	   *}
 	   */
-	  // Example 2  - flag a link to be altered by hook_translated_menu_link_alter()
+	  // Example 2  - flag a link to be altered by hook_translated_menu_link_alter().
 	  /*
 	   *if ($item['link_path'] == 'devel/cache/clear') {
 	   *  $item['options']['alter'] = TRUE;
@@ -4602,7 +4602,7 @@ snippet hook_xmlrpc
 	   *    'drupal.site.ping',
 	   *    'drupal_directory_ping',
 	   *    array('boolean', 'string', 'string', 'string', 'string', 'string'),
-	   *    t('Handling ping request'))
+	   *    t('Handling ping request')),
 	   *);
 	   */
 	  ${1:/* Your code here */}
@@ -5011,7 +5011,7 @@ snippet hook_schema
 	   *    ),
 	   *  'unique keys' => array(
 	   *    'nid_vid' => array('nid', 'vid'),
-	   *    'vid'     => array('vid')
+	   *    'vid'     => array('vid'),
 	   *    ),
 	   *  'foreign keys' => array(
 	   *    'node_revision' => array(
@@ -5020,7 +5020,7 @@ snippet hook_schema
 	   *      ),
 	   *    'node_author' => array(
 	   *      'table' => 'users',
-	   *      'columns' => array('uid' => 'uid')
+	   *      'columns' => array('uid' => 'uid'),
 	   *      ),
 	   *     ),
 	   *  'primary key' => array('nid'),
@@ -5040,7 +5040,7 @@ snippet hook_schema
 	      '${9}' => array('${10}'),
 	      ),
 	    'unique keys' => array(
-	      '${11}' => array('${12}')
+	      '${11}' => array('${12}'),
 	      ),
 	    'foreign keys' => array(
 	      '${13}' => array(
@@ -5119,7 +5119,7 @@ snippet hook_update_dependencies
 	  // direction should be done only in rare situations, since it can lead to the
 	  // following problem: If a site has already run the yet_another_module
 	  // module's database updates before it updates its codebase to pick up the
-	  // newest mymodule code, then the dependency declared here will be ignored.)
+	  // newest mymodule code, then the dependency declared here will be ignored).
 	  /*
 	   *$dependencies['yet_another_module'][7004] = array(
 	   *  'mymodule' => 7001,
@@ -6377,13 +6377,13 @@ snippet hook_node_info
 	     *  'name' => t('Blog entry'),
 	     *  'base' => 'blog',
 	     *  'description' => t('Use for multi-user blogs. Every user gets a personal blog.'),
-	     *)
+	     *),
 	     */
 	    '${1}' => array(
 	      'name' => t('${2}'),
 	      'base' => '${3}',
 	      'description' => t('${4}'),
-	    )
+	    ),
 	  );
 	}
 snippet hook_ranking
@@ -7499,7 +7499,7 @@ snippet hook_field_extra_fields
 	   *      'description' => t('Poll results'),
 	   *      'weight' => 0,
 	   *    ),
-	   *  )
+	   *  ),
 	   *);
 	   */
 	  $extra['${1}']['${2}'] = array(
@@ -7516,7 +7516,7 @@ snippet hook_field_extra_fields
 	        'description' => t('${9}'),
 	        'weight' => ${10},
 	      ),
-	    )
+	    ),
 	  );
 	
 	  return $extra;
