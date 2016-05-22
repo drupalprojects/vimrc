@@ -166,7 +166,7 @@ endfun  " }}} }}}
 " Return path to exuberant ctags, or '' if not found.
 function! drupal#CtagsPath() " {{{
   let dirs = ['', '/usr/bin/', '/usr/local/bin/']
-  let condition = 'executable(path) && system(path --version) =~ "Exuberant Ctags"'
+  let condition = 'executable(path) && system(path . "--version") =~ "Exuberant Ctags"'
   return s:FindPath(dirs, 'ctags', condition)
 endfun
 " }}} }}}
