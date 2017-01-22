@@ -546,15 +546,18 @@ function drush_vimrc_tag_gen($path = '.') {
   }
 
   // Figure out which ctags options to use.
-  $excludes = array('.git');
+  $excludes = array('.git', '*/sites/*/files/*', '*/sites/*settings.php');
   $langmap = 'php:+.module.install.inc.profile.theme.engine';
   if ($include_test == 'yes') {
     $langmap .= '.test';
   }
   else {
-    $excludes += array('simpletest', 'tests', 'Tests', 'Test', 'Test.php');
+    $excludes = array_merge($excludes, array('simpletest', 'tests', 'Tests', 'Test', 'Test.php'));
   }
-  if ($include_js != 'yes') {
+  if ($include_js == 'yes') {
+    $excludes += array_merge($excludes, array('*.min.js', '*-min.js', '*/ckeditor/lang/*.js'));
+  }
+  else {
     $langmap .= ',javascript:';
   }
   $options = drush_get_option('ctags-options', '');
@@ -564,7 +567,7 @@ function drush_vimrc_tag_gen($path = '.') {
   $options .= " --langdef=file";
   $langmap .= ",file:+.twig.yml";
   $options .= " -R --totals --extra=+f --langmap=$langmap --php-kinds=-v";
-  $options .= ' --exclude=' . implode(' --exclude=', $excludes);
+  $options .= ' --exclude="' . implode('" --exclude="', $excludes) . '"';
 
   // Run ctags, generating $tag_file.
   drush_log(dt('Some warning messages from ctags are normal.'));
