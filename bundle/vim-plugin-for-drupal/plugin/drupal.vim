@@ -63,18 +63,31 @@ endfunction " }}} }}}
 " unless the current argument starts with "@", in which case it uses the
 " output of "drush site-alias".
 command! -nargs=* -complete=custom,s:DrushComplete Drush call s:Drush(<q-args>)
+let s:site_alias = ''
 function! s:Drush(command) abort " {{{
-  let shortcommand = 'drush ' . a:command
-  let statusline = '%<[' . shortcommand . '] %h%m%r%=%-14.(%l,%c%V%) %P'
+  let index = matchend(a:command, '\S\+')
+  let subcommand = strpart(a:command, 0, index)
+  let subargs = strpart(a:command, index)
+  let command = 'drush'
+  " Deal with site aliases. Treat 'site-set' and its alias 'use' specially,
+  " saving the remaining part of the command as s:site_alias. Otherwise, check
+  " if a:command starts with a site alias; if not, and s:site_alias is set,
+  " use it.
+  if subcommand == 'site-set' || subcommand == 'use'
+    let s:site_alias = substitute(subargs, '^\s*', '', '')
+  elseif subargs !~ '^\s\+@'
+    let command .= ' ' . s:site_alias
+  endif
+  let command .= ' ' . a:command
+  let statusline = '%<[' . command . '] %h%m%r%=%-14.(%l,%c%V%) %P'
 
   " If the vim-dispatch plugin is available, then let it do the job.
   if exists(':Dispatch') == 2
     " let &l:statusline = statusline
-    exe 'Dispatch drush' a:command
+    execute 'Dispatch' command
     return
   endif
 
-  " Since vim-dispatch is not available, we have to do it ourselves.
   " Open a new window. It is OK to quit without saving, and :w does nothing.
   new
   setlocal buftype=nofile bufhidden=hide noswapfile
@@ -88,12 +101,11 @@ function! s:Drush(command) abort " {{{
   let &l:statusline = statusline
   " Execute the command and grab the output. Clean it up.
   " TODO: Does the clean-up work on other OS's?
-  let commandline = 'drush --nocolor ' . a:command
-  let out = system(commandline)
+  let out = system(command . ' --nocolor')
   let out = substitute(out, '\s*\r', '', 'g')
   " Add the command and output to our new scratch window.
-  put = '$ ' . shortcommand
-  put = repeat('=', 2 + strlen(shortcommand))
+  put = '$ ' . command
+  put = repeat('=', 2 + strlen(command))
   put = out
   " Delete the blank line at the top and stay there.
   1d
