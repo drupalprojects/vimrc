@@ -68,6 +68,22 @@ if &ft =~ '\<php\>'
 endif
 " }}} PHP specific settings.
 
+" {{{ Javascript specific settings.
+" This plugins does 'set ft=javascript.drupal'.  This means that the
+" settings here will come after those set by the javascript ftplugins.
+if &ft =~ '\<javascript\>'
+  " Add eslint to the checkers array. There is no need to check for the binary
+  " as in phpcs, syntastic will handle it.
+  if exists('loaded_syntastic_plugin')
+    if !exists('b:syntastic_javascript_checkers')
+      let b:syntastic_checkers = ['eslint']
+    elseif index(b:syntastic_checkers, 'eslint') == -1
+      call add(b:syntastic_checkers, 'eslint')
+    endif
+  endif
+endif
+" }}} Javascript specific settings.
+
 " Vdebug settings. {{{
 if !exists('g:vdebug_features')
   let g:vdebug_features = {}
