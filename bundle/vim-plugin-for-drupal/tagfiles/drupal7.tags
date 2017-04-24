@@ -247,6 +247,7 @@ DatabaseTransactionTestCase	$DRUPAL_ROOT/modules/simpletest/tests/database_test.
 DatabaseUpdateComplexTestCase	$DRUPAL_ROOT/modules/simpletest/tests/database_test.test	/^class DatabaseUpdateComplexTestCase extends DatabaseTestCase {$/;"	c
 DatabaseUpdateLOBTestCase	$DRUPAL_ROOT/modules/simpletest/tests/database_test.test	/^class DatabaseUpdateLOBTestCase extends DatabaseTestCase {$/;"	c
 DatabaseUpdateTestCase	$DRUPAL_ROOT/modules/simpletest/tests/database_test.test	/^class DatabaseUpdateTestCase extends DatabaseTestCase {$/;"	c
+DateFormatTestCase	$DRUPAL_ROOT/modules/system/system.test	/^class DateFormatTestCase extends DrupalWebTestCase {$/;"	c
 DateTimeFunctionalTest	$DRUPAL_ROOT/modules/system/system.test	/^class DateTimeFunctionalTest extends DrupalWebTestCase {$/;"	c
 DefaultMailSystem	$DRUPAL_ROOT/modules/system/system.mail.inc	/^class DefaultMailSystem implements MailSystemInterface {$/;"	c
 DeleteQuery	$DRUPAL_ROOT/includes/database/query.inc	/^class DeleteQuery extends Query implements QueryConditionInterface {$/;"	c
@@ -794,6 +795,7 @@ MockTestConnection	$DRUPAL_ROOT/modules/simpletest/tests/filetransfer.test	/^cla
 ModuleDependencyTestCase	$DRUPAL_ROOT/modules/system/system.test	/^class ModuleDependencyTestCase extends ModuleTestCase {$/;"	c
 ModuleImplementsAlterTestCase	$DRUPAL_ROOT/modules/simpletest/tests/module.test	/^class ModuleImplementsAlterTestCase extends DrupalWebTestCase {$/;"	c
 ModuleInstallTestCase	$DRUPAL_ROOT/modules/simpletest/tests/module.test	/^class ModuleInstallTestCase extends DrupalWebTestCase {$/;"	c
+ModuleProvidedThemeEngineTestCase	$DRUPAL_ROOT/modules/simpletest/tests/theme.test	/^class ModuleProvidedThemeEngineTestCase extends DrupalWebTestCase {$/;"	c
 ModuleRequiredTestCase	$DRUPAL_ROOT/modules/system/system.test	/^class ModuleRequiredTestCase extends ModuleTestCase {$/;"	c
 ModuleTestCase	$DRUPAL_ROOT/modules/system/system.test	/^class ModuleTestCase extends DrupalWebTestCase {$/;"	c
 ModuleUninstallTestCase	$DRUPAL_ROOT/modules/simpletest/tests/module.test	/^class ModuleUninstallTestCase extends DrupalWebTestCase {$/;"	c
@@ -1187,7 +1189,7 @@ UserUpgradePathPasswordTokenTestCase	$DRUPAL_ROOT/modules/simpletest/tests/upgra
 UserUserSearchTestCase	$DRUPAL_ROOT/modules/user/user.test	/^class UserUserSearchTestCase extends DrupalWebTestCase {$/;"	c
 UserValidateCurrentPassCustomForm	$DRUPAL_ROOT/modules/user/user.test	/^class UserValidateCurrentPassCustomForm extends DrupalWebTestCase {$/;"	c
 UserValidationTestCase	$DRUPAL_ROOT/modules/user/user.test	/^class UserValidationTestCase extends DrupalWebTestCase {$/;"	c
-VERSION	$DRUPAL_ROOT/includes/bootstrap.inc	/^define('VERSION', '7.53');$/;"	d
+VERSION	$DRUPAL_ROOT/includes/bootstrap.inc	/^define('VERSION', '7.54');$/;"	d
 ValidUrlTestCase	$DRUPAL_ROOT/modules/simpletest/tests/common.test	/^class ValidUrlTestCase extends DrupalUnitTestCase {$/;"	c
 WATCHDOG_ALERT	$DRUPAL_ROOT/includes/bootstrap.inc	/^define('WATCHDOG_ALERT', 1);$/;"	d
 WATCHDOG_CRITICAL	$DRUPAL_ROOT/includes/bootstrap.inc	/^define('WATCHDOG_CRITICAL', 2);$/;"	d
@@ -1747,6 +1749,7 @@ _theme_save_registry	$DRUPAL_ROOT/includes/theme.inc	/^function _theme_save_regi
 _theme_table_cell	$DRUPAL_ROOT/includes/theme.inc	/^function _theme_table_cell($cell, $header = FALSE) {$/;"	f
 _theme_test_alter	$DRUPAL_ROOT/modules/simpletest/tests/theme_test.module	/^function _theme_test_alter() {$/;"	f
 _theme_test_drupal_add_region_content	$DRUPAL_ROOT/modules/simpletest/tests/theme_test.module	/^function _theme_test_drupal_add_region_content() {$/;"	f
+_theme_test_engine_info_test	$DRUPAL_ROOT/modules/simpletest/tests/theme_test.module	/^function _theme_test_engine_info_test() {$/;"	f
 _theme_test_load_registry	$DRUPAL_ROOT/modules/simpletest/tests/theme_test.module	/^function _theme_test_load_registry() {$/;"	f
 _theme_test_suggestion	$DRUPAL_ROOT/modules/simpletest/tests/theme_test.module	/^function _theme_test_suggestion() {$/;"	f
 _toolbar_is_collapsed	$DRUPAL_ROOT/modules/toolbar/toolbar.module	/^function _toolbar_is_collapsed() {$/;"	f
@@ -3525,6 +3528,7 @@ drupal_installation_attempted	$DRUPAL_ROOT/includes/bootstrap.inc	/^function dru
 drupal_is_cli	$DRUPAL_ROOT/includes/bootstrap.inc	/^function drupal_is_cli() {$/;"	f
 drupal_is_denied	$DRUPAL_ROOT/includes/bootstrap.inc	/^function drupal_is_denied($ip) {$/;"	f
 drupal_is_front_page	$DRUPAL_ROOT/includes/path.inc	/^function drupal_is_front_page() {$/;"	f
+drupal_is_https	$DRUPAL_ROOT/includes/bootstrap.inc	/^function drupal_is_https() {$/;"	f
 drupal_js_defaults	$DRUPAL_ROOT/includes/common.inc	/^function drupal_js_defaults($data = NULL) {$/;"	f
 drupal_json_decode	$DRUPAL_ROOT/includes/common.inc	/^function drupal_json_decode($var) {$/;"	f
 drupal_json_encode	$DRUPAL_ROOT/includes/common.inc	/^function drupal_json_encode($var) {$/;"	f
@@ -4648,6 +4652,8 @@ form_test_two_instances	$DRUPAL_ROOT/modules/simpletest/tests/form_test.module	/
 form_test_user_register_form_rebuild	$DRUPAL_ROOT/modules/simpletest/tests/form_test.module	/^function form_test_user_register_form_rebuild($form, &$form_state) {$/;"	f
 form_test_validate_form	$DRUPAL_ROOT/modules/simpletest/tests/form_test.module	/^function form_test_validate_form($form, &$form_state) {$/;"	f
 form_test_validate_form_validate	$DRUPAL_ROOT/modules/simpletest/tests/form_test.module	/^function form_test_validate_form_validate(&$form, &$form_state) {$/;"	f
+form_test_validate_no_token	$DRUPAL_ROOT/modules/simpletest/tests/form_test.module	/^function form_test_validate_no_token($form, &$form_state) {$/;"	f
+form_test_validate_no_token_submit	$DRUPAL_ROOT/modules/simpletest/tests/form_test.module	/^function form_test_validate_no_token_submit($form, &$form_state) {$/;"	f
 form_test_validate_required_form	$DRUPAL_ROOT/modules/simpletest/tests/form_test.module	/^function form_test_validate_required_form($form, &$form_state) {$/;"	f
 form_test_validate_required_form_no_title	$DRUPAL_ROOT/modules/simpletest/tests/form_test.module	/^function form_test_validate_required_form_no_title($form, &$form_state) {$/;"	f
 form_test_validate_required_form_no_title_submit	$DRUPAL_ROOT/modules/simpletest/tests/form_test.module	/^function form_test_validate_required_form_no_title_submit($form, &$form_state) {$/;"	f
@@ -5396,6 +5402,7 @@ hook_simpletest_alter	$DRUPAL_ROOT/modules/simpletest/simpletest.api.php	/^funct
 hook_stream_wrappers	$DRUPAL_ROOT/modules/system/system.api.php	/^function hook_stream_wrappers() {$/;"	f
 hook_stream_wrappers_alter	$DRUPAL_ROOT/modules/system/system.api.php	/^function hook_stream_wrappers_alter(&$wrappers) {$/;"	f
 hook_system_info_alter	$DRUPAL_ROOT/modules/system/system.api.php	/^function hook_system_info_alter(&$info, $file, $type) {$/;"	f
+hook_system_theme_engine_info	$DRUPAL_ROOT/modules/system/system.api.php	/^function hook_system_theme_engine_info() {$/;"	f
 hook_system_theme_info	$DRUPAL_ROOT/modules/system/system.api.php	/^function hook_system_theme_info() {$/;"	f
 hook_system_themes_page_alter	$DRUPAL_ROOT/modules/system/system.api.php	/^function hook_system_themes_page_alter(&$theme_groups) {$/;"	f
 hook_taxonomy_term_delete	$DRUPAL_ROOT/modules/taxonomy/taxonomy.api.php	/^function hook_taxonomy_term_delete($term) {$/;"	f
@@ -6805,6 +6812,11 @@ number_field_widget_info	$DRUPAL_ROOT/modules/field/modules/number/number.module
 number_field_widget_validate	$DRUPAL_ROOT/modules/field/modules/number/number.module	/^function number_field_widget_validate($element, &$form_state) {$/;"	f
 number_help	$DRUPAL_ROOT/modules/field/modules/number/number.module	/^function number_help($path, $arg) {$/;"	f
 numbers	$DRUPAL_ROOT/includes/update.inc	/^      \/\/ represent update function numbers (which are integers). We cannot use$/;"	f
+nyan_cat.engine	$DRUPAL_ROOT/modules/simpletest/tests/themes/engines/nyan_cat/nyan_cat.engine	1;"	F
+nyan_cat_extension	$DRUPAL_ROOT/modules/simpletest/tests/themes/engines/nyan_cat/nyan_cat.engine	/^function nyan_cat_extension() {$/;"	f
+nyan_cat_init	$DRUPAL_ROOT/modules/simpletest/tests/themes/engines/nyan_cat/nyan_cat.engine	/^function nyan_cat_init($template) {$/;"	f
+nyan_cat_render_template	$DRUPAL_ROOT/modules/simpletest/tests/themes/engines/nyan_cat/nyan_cat.engine	/^function nyan_cat_render_template($template_file, $variables) {$/;"	f
+nyan_cat_theme	$DRUPAL_ROOT/modules/simpletest/tests/themes/engines/nyan_cat/nyan_cat.engine	/^function nyan_cat_theme($existing, $type, $theme, $path) {$/;"	f
 o	$DRUPAL_ROOT/misc/jquery.ba-bbq.js	/^(function($,p){var i,m=Array.prototype.slice,r=decodeURIComponent,a=$.param,c,l,v,b=$.bbq=$.bbq||{},q,u,j,e=$.event.special,d="hashchange",A="querystring",D="fragment",y="elemUrlAttr",g="location",k="href",t="src",x=\/^.*\\?|#.*$\/g,w=\/^.*\\#\/,h,C={};function E(F){return typeof F==="string"}function B(G){var F=m.call(arguments,1);return function(){return G.apply(this,F.concat(m.call(arguments)))}}function n(F){return F.replace(\/^[^#]*#?(.*)$\/,"$1")}function o(F){return F.replace(\/(?:^[^?#]*\\?([^#]*).*$)?.*\/,"$1")}function f(H,M,F,I,G){var O,L,K,N,J;if(I!==i){K=F.match(H?\/^([^#]*)\\#?(.*)$\/:\/^([^#?]*)\\??([^#]*)(#?.*)\/);J=K[3]||"";if(G===2&&E(I)){L=I.replace(H?w:x,"")}else{N=l(K[2]);I=E(I)?l[H?D:A](I):I;L=G===2?I:G===1?$.extend({},I,N):$.extend({},N,I);L=a(L);if(H){L=L.replace(h,r)}}O=K[1]+(H?"#":L||!K[1]?"?":"")+L+J}else{O=M(F!==i?F:p[g][k])}return O}a[A]=B(f,0,o);a[D]=c=B(f,1,n);c.noEscape=function(G){G=G||"";var F=$.map(G.split(""),encodeURIComponent);h=new RegExp(F.join("|"),"g")};c.noEscape(",\/");$.deparam=l=function(I,F){var H={},G={"true":!0,"false":!1,"null":null};$.each(I.replace(\/\\+\/g," ").split("&"),function(L,Q){var K=Q.split("="),P=r(K[0]),J,O=H,M=0,R=P.split("]["),N=R.length-1;if(\/\\[\/.test(R[0])&&\/\\]$\/.test(R[N])){R[N]=R[N].replace(\/\\]$\/,"");R=R.shift().split("[").concat(R);N=R.length-1}else{N=0}if(K.length===2){J=r(K[1]);if(F){J=J&&!isNaN(J)?+J:J==="undefined"?i:G[J]!==i?G[J]:J}if(N){for(;M<=N;M++){P=R[M]===""?O.length:R[M];O=O[P]=M<N?O[P]||(R[M+1]&&isNaN(R[M+1])?{}:[]):J}}else{if($.isArray(H[P])){H[P].push(J)}else{if(H[P]!==i){H[P]=[H[P],J]}else{H[P]=J}}}}else{if(P){H[P]=F?i:""}}});return H};function z(H,F,G){if(F===i||typeof F==="boolean"){G=F;F=a[H?D:A]()}else{F=E(F)?F.replace(H?w:x,""):F}return l(F,G)}l[A]=B(z,0);l[D]=v=B(z,1);$[y]||($[y]=function(F){return $.extend(C,F)})({a:k,base:k,iframe:t,img:t,input:t,form:"action",link:k,script:t});j=$[y];function s(I,G,H,F){if(!E(H)&&typeof H!=="object"){F=H;H=G;G=i}return this.each(function(){var L=$(this),J=G||j()[(this.nodeName||"").toLowerCase()]||"",K=J&&L.attr(J)||"";L.attr(J,a[I](K,H,F))})}$.fn[A]=B(s,A);$.fn[D]=B(s,D);b.pushState=q=function(I,F){if(E(I)&&\/^#\/.test(I)&&F===i){F=2}var H=I!==i,G=c(p[g][k],H?I:{},H?F:2);p[g][k]=G+(\/#\/.test(G)?"":"#")};b.getState=u=function(F,G){return F===i||typeof F==="boolean"?v(F):v(G)[F]};b.removeState=function(F){var G={};if(F!==i){G=u();$.each($.isArray(F)?F:arguments,function(I,H){delete G[H]})}q(G,2)};e[d]=$.extend(e[d],{add:function(F){var H;function G(J){var I=J[D]=c();J.getState=function(K,L){return K===i||typeof K==="boolean"?l(I,K):l(I,L)[K]};H.apply(this,arguments)}if($.isFunction(F)){H=F;return G}else{H=F.handler;F.handler=G}}})})(jQuery,this);$/;"	f
 of	$DRUPAL_ROOT/includes/ajax.inc	/^  \/\/ up to the #ajax['callback'] function of the element (may or may not be a$/;"	f
 of	$DRUPAL_ROOT/includes/common.inc	/^ * Each row of the table must also have a class of "draggable" in order to$/;"	c
@@ -7658,7 +7670,7 @@ setUp	$DRUPAL_ROOT/modules/update/update.test	/^  public function setUp() {$/;"	
 setUp	$DRUPAL_ROOT/modules/user/user.test	/^  function setUp() {$/;"	f
 setUp	$DRUPAL_ROOT/profiles/testing/modules/drupal_system_listing_compatible_test/drupal_system_listing_compatible_test.test	/^  function setUp() {$/;"	f
 setUri	$DRUPAL_ROOT/includes/stream_wrappers.inc	/^  function setUri($uri) {$/;"	f
-setUri	$DRUPAL_ROOT/includes/stream_wrappers.inc	/^  function setUri($uri);$/;"	f
+setUri	$DRUPAL_ROOT/includes/stream_wrappers.inc	/^  public function setUri($uri);$/;"	f
 sets	$DRUPAL_ROOT/includes/common.inc	/^ * This function sets the page cache if appropriate, and allows modules to$/;"	f
 sets	$DRUPAL_ROOT/includes/locale.inc	/^ * This function sets a refresh flag for a specified language, or all$/;"	f
 sets	$DRUPAL_ROOT/includes/pager.inc	/^ * This function sets up the necessary global variables so that future calls$/;"	f
@@ -7849,7 +7861,6 @@ simpletest_uninstall	$DRUPAL_ROOT/modules/simpletest/simpletest.install	/^functi
 simpletest_verbose	$DRUPAL_ROOT/modules/simpletest/drupal_web_test_case.php	/^function simpletest_verbose($message, $original_file_directory = NULL, $test_class = NULL) {$/;"	f
 simply	$DRUPAL_ROOT/modules/field/modules/field_sql_storage/field_sql_storage.module	/^ * This function simply marks for deletion all data associated with the field.$/;"	f
 simply	$DRUPAL_ROOT/modules/simpletest/tests/ajax.test	/^   * in. Therefore, this function simply asserts that one of the commands in$/;"	f
-sites.php	$DRUPAL_ROOT/sites/sites.php	1;"	F
 skipdots	$DRUPAL_ROOT/includes/filetransfer/filetransfer.inc	/^  protected function skipdots() {$/;"	f
 skips	$DRUPAL_ROOT/includes/common.inc	/^ *   (optional) If set to TRUE, this function skips calling drupal_alter() on$/;"	f
 so	$DRUPAL_ROOT/includes/install.inc	/^ *   The name of the file calling this function so we can strip it out of$/;"	f
@@ -7955,6 +7966,7 @@ statistics_user_tracker	$DRUPAL_ROOT/modules/statistics/statistics.pages.inc	/^f
 statusLineData	$DRUPAL_ROOT/modules/simpletest/tests/common.test	/^  protected function statusLineData() {$/;"	f
 still	$DRUPAL_ROOT/modules/system/system.test	/^    $this->assertField('mail', 'User interface still available.');$/;"	i
 still	$DRUPAL_ROOT/modules/system/system.test	/^    $this->assertField('site_name', 'Admin interface still available.');$/;"	i
+stream_cast	$DRUPAL_ROOT/includes/stream_wrappers.inc	/^  public function stream_cast($cast_as) {$/;"	f
 stream_close	$DRUPAL_ROOT/includes/stream_wrappers.inc	/^  public function stream_close() {$/;"	f
 stream_close	$DRUPAL_ROOT/includes/stream_wrappers.inc	/^  public function stream_close();$/;"	f
 stream_eof	$DRUPAL_ROOT/includes/stream_wrappers.inc	/^  public function stream_eof() {$/;"	f
@@ -7963,16 +7975,19 @@ stream_flush	$DRUPAL_ROOT/includes/stream_wrappers.inc	/^  public function strea
 stream_flush	$DRUPAL_ROOT/includes/stream_wrappers.inc	/^  public function stream_flush();$/;"	f
 stream_lock	$DRUPAL_ROOT/includes/stream_wrappers.inc	/^  public function stream_lock($operation) {$/;"	f
 stream_lock	$DRUPAL_ROOT/includes/stream_wrappers.inc	/^  public function stream_lock($operation);$/;"	f
+stream_metadata	$DRUPAL_ROOT/includes/stream_wrappers.inc	/^  public function stream_metadata($uri, $option, $value) {$/;"	f
 stream_open	$DRUPAL_ROOT/includes/stream_wrappers.inc	/^  public function stream_open($uri, $mode, $options, &$opened_path) {$/;"	f
 stream_open	$DRUPAL_ROOT/includes/stream_wrappers.inc	/^  public function stream_open($uri, $mode, $options, &$opened_url);$/;"	f
 stream_read	$DRUPAL_ROOT/includes/stream_wrappers.inc	/^  public function stream_read($count) {$/;"	f
 stream_read	$DRUPAL_ROOT/includes/stream_wrappers.inc	/^  public function stream_read($count);$/;"	f
 stream_seek	$DRUPAL_ROOT/includes/stream_wrappers.inc	/^  public function stream_seek($offset, $whence) {$/;"	f
 stream_seek	$DRUPAL_ROOT/includes/stream_wrappers.inc	/^  public function stream_seek($offset, $whence);$/;"	f
+stream_set_option	$DRUPAL_ROOT/includes/stream_wrappers.inc	/^  public function stream_set_option($option, $arg1, $arg2) {$/;"	f
 stream_stat	$DRUPAL_ROOT/includes/stream_wrappers.inc	/^  public function stream_stat() {$/;"	f
 stream_stat	$DRUPAL_ROOT/includes/stream_wrappers.inc	/^  public function stream_stat();$/;"	f
 stream_tell	$DRUPAL_ROOT/includes/stream_wrappers.inc	/^  public function stream_tell() {$/;"	f
 stream_tell	$DRUPAL_ROOT/includes/stream_wrappers.inc	/^  public function stream_tell();$/;"	f
+stream_truncate	$DRUPAL_ROOT/includes/stream_wrappers.inc	/^  public function stream_truncate($new_size) {$/;"	f
 stream_wrappers.inc	$DRUPAL_ROOT/includes/stream_wrappers.inc	1;"	F
 stream_write	$DRUPAL_ROOT/includes/stream_wrappers.inc	/^  public function stream_write($data) {$/;"	f
 stream_write	$DRUPAL_ROOT/includes/stream_wrappers.inc	/^  public function stream_write($data);$/;"	f
@@ -8718,6 +8733,7 @@ testDbNextId	$DRUPAL_ROOT/modules/simpletest/tests/database_test.test	/^  functi
 testDebugOutput	$DRUPAL_ROOT/modules/simpletest/tests/theme.test	/^  function testDebugOutput() {$/;"	f
 testDecodeEntities	$DRUPAL_ROOT/modules/simpletest/tests/unicode.test	/^  function testDecodeEntities() {$/;"	f
 testDefault	$DRUPAL_ROOT/modules/simpletest/tests/common.test	/^  function testDefault() {$/;"	f
+testDefaultDateFormats	$DRUPAL_ROOT/modules/system/system.test	/^  function testDefaultDateFormats() {$/;"	f
 testDefaultEmptyInsert	$DRUPAL_ROOT/modules/simpletest/tests/database_test.test	/^  function testDefaultEmptyInsert() {$/;"	f
 testDefaultFileFieldDisplay	$DRUPAL_ROOT/modules/file/tests/file.test	/^  function testDefaultFileFieldDisplay() {$/;"	f
 testDefaultImages	$DRUPAL_ROOT/modules/image/image.test	/^  function testDefaultImages() {$/;"	f
@@ -8754,6 +8770,7 @@ testDisabledAccountLink	$DRUPAL_ROOT/modules/user/user.test	/^  function testDis
 testDisabledElements	$DRUPAL_ROOT/modules/simpletest/tests/form.test	/^  function testDisabledElements() {$/;"	f
 testDisabledMarkup	$DRUPAL_ROOT/modules/simpletest/tests/form.test	/^  function testDisabledMarkup() {$/;"	f
 testDisabledNodeTypeUpgrade	$DRUPAL_ROOT/modules/simpletest/tests/upgrade/upgrade.node.test	/^  public function testDisabledNodeTypeUpgrade() {$/;"	f
+testDisabledToken	$DRUPAL_ROOT/modules/simpletest/tests/form.test	/^  function testDisabledToken() {$/;"	f
 testDiscovery	$DRUPAL_ROOT/modules/openid/openid.test	/^  function testDiscovery() {$/;"	f
 testDiscovery	$DRUPAL_ROOT/modules/simpletest/simpletest.test	/^  function testDiscovery() {$/;"	f
 testDiscoveryFunctions	$DRUPAL_ROOT/modules/simpletest/simpletest.test	/^  function testDiscoveryFunctions() {$/;"	f
@@ -8832,6 +8849,7 @@ testEnableRequirementsFailureDependency	$DRUPAL_ROOT/modules/system/system.test	
 testEnableTargetLogging	$DRUPAL_ROOT/modules/simpletest/tests/database_test.test	/^  function testEnableTargetLogging() {$/;"	f
 testEnableTargetLoggingNoTarget	$DRUPAL_ROOT/modules/simpletest/tests/database_test.test	/^  function testEnableTargetLoggingNoTarget() {$/;"	f
 testEnableWithoutDependency	$DRUPAL_ROOT/modules/system/system.test	/^  function testEnableWithoutDependency() {$/;"	f
+testEngineIsFoundAndWorking	$DRUPAL_ROOT/modules/simpletest/tests/theme.test	/^  function testEngineIsFoundAndWorking() {$/;"	f
 testEntityFieldQuery	$DRUPAL_ROOT/modules/simpletest/tests/entity_query.test	/^  function testEntityFieldQuery() {$/;"	f
 testEntityFieldQueryAccess	$DRUPAL_ROOT/modules/simpletest/tests/entity_query.test	/^  function testEntityFieldQueryAccess() {$/;"	f
 testEntityFieldQueryDisablePager	$DRUPAL_ROOT/modules/simpletest/tests/entity_query.test	/^  function testEntityFieldQueryDisablePager() {$/;"	f
@@ -9291,6 +9309,7 @@ testNotInConditionUpdate	$DRUPAL_ROOT/modules/simpletest/tests/database_test.tes
 testNotNullCondition	$DRUPAL_ROOT/modules/simpletest/tests/database_test.test	/^  function testNotNullCondition() {$/;"	f
 testNullCondition	$DRUPAL_ROOT/modules/simpletest/tests/database_test.test	/^  function testNullCondition() {$/;"	f
 testNumberDecimalField	$DRUPAL_ROOT/modules/field/modules/number/number.test	/^  function testNumberDecimalField() {$/;"	f
+testNumberFloatField	$DRUPAL_ROOT/modules/field/modules/number/number.test	/^  function testNumberFloatField() {$/;"	f
 testNumberIntegerField	$DRUPAL_ROOT/modules/field/modules/number/number.test	/^  function testNumberIntegerField() {$/;"	f
 testNumberOfCommentsRdfaMarkup	$DRUPAL_ROOT/modules/rdf/rdf.test	/^  public function testNumberOfCommentsRdfaMarkup() {$/;"	f
 testNumberSearching	$DRUPAL_ROOT/modules/search/search.test	/^  function testNumberSearching() {$/;"	f
@@ -9755,6 +9774,7 @@ testWebTestRunner	$DRUPAL_ROOT/modules/simpletest/simpletest.test	/^  function t
 testWhereAndConditionUpdate	$DRUPAL_ROOT/modules/simpletest/tests/database_test.test	/^  function testWhereAndConditionUpdate() {$/;"	f
 testWhereUpdate	$DRUPAL_ROOT/modules/simpletest/tests/database_test.test	/^  function testWhereUpdate() {$/;"	f
 testWhosOnlineBlock	$DRUPAL_ROOT/modules/user/user.test	/^  function testWhosOnlineBlock() {$/;"	f
+testWidgetValidation	$DRUPAL_ROOT/modules/file/tests/file.test	/^  function testWidgetValidation() {$/;"	f
 testWithFilename	$DRUPAL_ROOT/modules/simpletest/tests/file.test	/^  function testWithFilename() {$/;"	f
 testWithGDinvalidDimension	$DRUPAL_ROOT/modules/user/user.test	/^  function testWithGDinvalidDimension() {$/;"	f
 testWithGDinvalidSize	$DRUPAL_ROOT/modules/user/user.test	/^  function testWithGDinvalidSize() {$/;"	f
@@ -10020,7 +10040,9 @@ theme_test_exit	$DRUPAL_ROOT/modules/simpletest/tests/theme_test.module	/^functi
 theme_test_hook_init_page_callback	$DRUPAL_ROOT/modules/simpletest/tests/theme_test.module	/^function theme_test_hook_init_page_callback() {$/;"	f
 theme_test_init	$DRUPAL_ROOT/modules/simpletest/tests/theme_test.module	/^function theme_test_init() {$/;"	f
 theme_test_menu	$DRUPAL_ROOT/modules/simpletest/tests/theme_test.module	/^function theme_test_menu() {$/;"	f
+theme_test_system_theme_engine_info	$DRUPAL_ROOT/modules/simpletest/tests/theme_test.module	/^function theme_test_system_theme_engine_info() {$/;"	f
 theme_test_system_theme_info	$DRUPAL_ROOT/modules/simpletest/tests/theme_test.module	/^function theme_test_system_theme_info() {$/;"	f
+theme_test_template_test.nyan-cat.html	$DRUPAL_ROOT/modules/simpletest/tests/themes/test_theme_nyan_cat/templates/theme_test_template_test.nyan-cat.html	1;"	F
 theme_test_theme	$DRUPAL_ROOT/modules/simpletest/tests/theme_test.module	/^function theme_test_theme($existing, $type, $theme, $path) {$/;"	f
 theme_text_format_wrapper	$DRUPAL_ROOT/modules/filter/filter.module	/^function theme_text_format_wrapper($variables) {$/;"	f
 theme_textarea	$DRUPAL_ROOT/includes/form.inc	/^function theme_textarea($variables) {$/;"	f
