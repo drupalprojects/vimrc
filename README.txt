@@ -21,6 +21,32 @@ command line,
 If the drush version is at least 5.5, then the recommended plugins will be
 installed in the bundle/ subdirectry of your vimfiles directory.
 
+INSTALLATION AS A VIM 8 PACKAGE
+
+If you use Vim 8, then you can install most of this project using the new
+package feature.
+
+Download this project to your packages directory, usually ~/.vim/pack/, and
+rename the bundle subdirectory to start. Then you should have, for example,
+~/.vim/pack/vimrc/start/vim-plugin-for-drupal/plugin/drupal.vim.
+
+Before the line
+
+	filetype plugin on
+
+in your vimrc file, add the lines
+
+	if v:version >= 800
+	  packloadall
+	endif
+
+This will enable the filetype.vim in this project when determining file types.
+You can omit the version check if you only use Vim 8.
+
+The only thing you lose with this method are the drush commands. If you want
+to use them, then you can copy or symlink vimrc.drush.inc from this project to
+a directory that drush searches for commands, such as ~/.drush.
+
 INSTALLATION WITH PATHOGEN
 
 Pathogen (http://www.vim.org/scripts/script.php?script_id=2332) is a package
@@ -48,14 +74,14 @@ Copy the files from the bundle/vim-plugin-for-drupal/ subdirectory into your
 vimfiles directory.  For most users, your vimfiles directory is ~/.vim; on
 Windows, it is ~\vimfiles by default.  From within vim, use
 
-:help vimfiles
+	:help vimfiles
 
 for details.  If you have downloaded these files as vimrc.tar.gz and your
 vimfiles directory is ~/.vim, then this should work on UNIX-like systems:
 
-$ cd ~/.vim
-$ tar xzf path/to/vimrc.tar.gz --strip-components 3 \
-  vimrc/bundle/vim-plugin-for-drupal
+	$ cd ~/.vim
+	$ tar xzf path/to/vimrc.tar.gz --strip-components 3 \
+	  vimrc/bundle/vim-plugin-for-drupal
 
 Note:  if there are filename conflicts, then tar will silently overwrite the
 existing files.
