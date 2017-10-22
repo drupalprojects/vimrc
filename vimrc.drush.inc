@@ -506,8 +506,8 @@ function drush_vimrc_tag_gen_validate() {
   drush_set_option('ctags', $ctags);
   $success = drush_shell_exec('%s --version', $ctags);
   $output = drush_shell_exec_output();
-  if (!$success || !preg_match('/^Exuberant Ctags/', $output[0])) {
-    return drush_set_error('DRUSH_APPLICATION_ERROR', dt('Make sure that Exuberant Ctags is installed (http://ctags.sourceforge.net/) and specify the path with (for example) --ctags=/usr/local/bin/ctags'));
+  if (!$success || !preg_match('/^(Exuberant|Universal) Ctags/', $output[0])) {
+    return drush_set_error('DRUSH_APPLICATION_ERROR', dt('Make sure that Exuberant Ctags (http://ctags.sourceforge.net/) or Universal Ctags (https://ctags.io/) is installed and specify the path with (for example) --ctags=/usr/local/bin/ctags'));
   }
   // Check that the tags file is writable.
   $tag_file = drush_get_option('tag-file', 'tags');
